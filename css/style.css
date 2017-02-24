@@ -1,0 +1,180 @@
+/*I borrowed some colors form Udacity website.*/
+/*Initially I wanted it to look similar to Udacity*/
+
+body {
+    background-color: #2e3d49;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+section {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.list {
+    width: 25vw;
+    max-width: 300px;
+    max-height: 100vh;
+    transition: 0.4s;
+    overflow: hidden;
+}
+.display {
+    width: 75vw;
+    height: 100vh;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    background-color: #2e3d49;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 20px 30px;
+    width: 100%;
+    border-color: #24323e;
+    border-style: solid;
+    border-width: 0 0 0.05px 0;
+}
+input {
+    background-color: #2e3d49;
+    margin: 0;
+    padding: 20px 0 20px 30px;
+    width: 100%;
+    border-color: #24323e;
+    border-style: solid;
+    border-width: 0 0 0.05px 0;
+    color: #02b3e4;
+    outline: none;
+    font-size: 16px;
+}
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    
+    color: white;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    
+    color: white;
+    opacity: 1;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    
+    color: white;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    
+    color: white;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none !important;
+    display: block;
+    outline: none;
+    background-color: #2e3d49;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+a,
+a:visited {
+    color: #a19c9b;
+}
+a:hover {
+    color: #02b3e4;
+}
+/*hide scroll bar*/
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+/*hamburger icon animation*/
+
+.container {
+    position: absolute;
+    top: -300px;
+    right: 3vw;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #2e3d49;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+/* Rotate first bar */
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+/* Fade out the second bar */
+
+.change .bar2 {
+    opacity: 0;
+}
+/* Rotate last bar */
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+.attribution {
+    font-size: 0.7em;
+    position: absolute;
+    top: 0.3vh;
+    right: 0.2vw;
+    color: #000000;
+}
+@media screen and (max-width: 850px) {
+    .list {
+        position: absolute;
+        width: 230px;
+        left: -280px;
+    }
+    .visible {
+        left: 0 !important;
+        z-index: 1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .display {
+        width: 100vw;
+    }
+    .container {
+        top: 3vh;
+    }
+}
+@media (min-width: 1200px) {
+    .display {
+        width: calc(100vw - 300px);
+        transition: 0.5 ease;
+    }
+}

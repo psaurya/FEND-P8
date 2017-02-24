@@ -1,0 +1,64 @@
+<!--Special Thanks to
+  w3schools for hamburger animation
+  stackoverflow for a ton of small-small queries
+  Google Maps APIs course on Udacity
+  and how to tutorials on Google Maps API website
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Udacity Project-09</title>
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="main">
+
+    <section class="list">
+      <!--   list with ko binding   -->
+      <input autofocus type="text" data-bind="textInput: search" placeholder="Search here!">
+
+      <ul data-bind="foreach: currentLoc" onclick="toggleClass()">
+        <li>
+          <a href="#" data-bind="text: $data.title, click: $root.bounce"></a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="display">
+      <div id="map"></div>
+    </section>
+
+    <!--animated Hamburger-->
+    <!--thanks to example w3schools-->
+    <div class="container" onclick="toggleSign(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    Weather Data: OpenWeather API
+  </div>
+
+  <!--jQuery request-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--knockout framework-->
+  <script src="js/knockout-3.4.1.js"></script>
+  <!--load script-->
+  <script src="js/script.js"></script>
+  <!--Google Maps API request-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqdxjxAjYX4gmvIQ2aXHGk_ydBAsdlp5g&v=3&callback=initMap" onerror=errorLog()>
+  </script>
+
+</body>
+
+</html>
